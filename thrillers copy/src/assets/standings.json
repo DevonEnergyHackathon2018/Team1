@@ -1,0 +1,52 @@
+[
+    {
+        "name": "Paul McCartney",
+        "points": 532,
+        "trend": "up",
+        "BU": "Anadarko",
+        "details": [
+            { "activityId": 1, "activity": "SAFE Observation", "count": 18, "points": 54, "pointsLastWeek": 100 },
+            { "activityId": 2, "activity": "Onsite Coaching/Feedback", "count": 230, "points": 115, "pointsLastWeek": 100 }
+        ]
+     },
+     {
+        "name": "Jimmy Hendrix",
+        "points": 499,
+        "trend": "down",
+        "BU": "Rockies",
+        "details": [
+            { "activityId": 1, "activity": "SAFE Observation", "count": 18, "points": 54, "pointsLastWeek": 100 },
+            { "activityId": 2, "activity": "Onsite Coaching/Feedback", "count": 230, "points": 115, "pointsLastWeek": 100 }
+        ]
+     },
+     {
+        "name": "Robert Plant",
+        "points": 312,
+        "trend": "up",
+        "BU": "Anadarko",
+        "details": [
+            { "activityId": 1, "activity": "SAFE Observation", "count": 18, "points": 54, "pointsLastWeek": 100 },
+            { "activityId": 2, "activity": "Onsite Coaching/Feedback", "count": 230, "points": 115, "pointsLastWeek": 100 }
+        ]
+     },
+     {
+        "name": "Freddie Mercury",
+        "points": 222,
+        "trend": "down",
+        "BU": "Texas",
+        "details": [
+            { "activityId": 1, "activity": "SAFE Observation", "count": 18, "points": 54, "pointsLastWeek": 100 },
+            { "activityId": 2, "activity": "Onsite Coaching/Feedback", "count": 230, "points": 115, "pointsLastWeek": 100 }
+        ]
+     },
+     {
+        "name": "Ozzy Osbourne",
+        "points": 118,
+        "trend": "down",
+        "BU": "Texas",
+        "details": [
+            { "activityId": 1, "activity": "SAFE Observation", "count": 18, "points": 54, "pointsLastWeek": 100 },
+            { "activityId": 2, "activity": "Onsite Coaching/Feedback", "count": 230, "points": 115, "pointsLastWeek": 100 }
+        ]
+     }
+] 

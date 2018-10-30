@@ -1,0 +1,37 @@
+[
+    {
+        "name": "Paul McCartney",
+        "details": [
+            { "activity": "SAFE Observation", "days": 12 },
+            { "activity": "Onsite Coaching/Feedback", "days": 70 }
+        ]
+     },
+     {
+         "name": "Jimmy Hendrix",
+         "details": [
+             { "activity": "SAFE Observation", "days": 47 },
+             { "activity": "Onsite Coaching/Feedback", "days": 60 }
+         ]
+      },
+      {
+          "name": "Robert Plant",
+          "details": [
+              { "activity": "SAFE Observation", "days": 5 },
+              { "activity": "Onsite Coaching/Feedback", "days": 39 }
+          ]
+       },
+       {
+           "name": "Freddie Mercury",
+           "details": [
+               { "activity": "SAFE Observation", "days": 102 },
+               { "activity": "Onsite Coaching/Feedback", "days": 37 }
+           ]
+        },
+        {
+            "name": "Ozzy Osbourne",
+            "details": [
+                { "activity": "SAFE Observation", "days": 29 },
+                { "activity": "Onsite Coaching/Feedback", "days": 39 }
+            ]
+         }
+] 

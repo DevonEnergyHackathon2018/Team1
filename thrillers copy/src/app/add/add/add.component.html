@@ -1,0 +1,48 @@
+<div class="container">
+  
+  <div *ngIf="!activityType">
+    <p>
+      Please select an Exposure Reduction Activity to add:
+    </p>
+    
+    <ul class="activity-types">
+      <li *ngFor="let type of activityTypes" (click)="selectActivityType(type)">{{type.type}} <span style="color: #999; margin-left: 1em;">{{type.points}} points</span></li>
+    </ul>
+  </div>
+  
+  <div *ngIf="activityType">
+    <br>
+    <h4>Welcome, Paul McCartney.</h4>
+    <p>Please add your Exposure Reduction Activity below.</p>
+    <br>
+  
+  
+    <div class="formrow">
+        <label>Date</label>
+        <input type="text" value="10/31/2018"/>
+      </div>
+      <div class="formrow">
+        <label>Location</label>
+        <select>
+          <option>Chicago, IL</option>
+          <option>Dallas, TX</option>
+          <option>Miami, FL</option>
+          <option>New York, NY</option>
+          <option>Pittsburgh, PA</option>
+          <option>San Francisco, CA</option>
+        </select>
+      </div>
+      <div class="formrow">
+        <label>Comments</label>
+        <textarea style="width: 100%" rows="4">this is just a test comment</textarea>
+      </div>
+      <div class="formrow">
+        <button type="submit" (click)="submit()">
+          <span *ngIf="networkAvailable">Add</span>
+          <span *ngIf="!networkAvailable">Queue Add</span>
+        </button>
+      </div>
+  </div>
+  
+  
+</div>
