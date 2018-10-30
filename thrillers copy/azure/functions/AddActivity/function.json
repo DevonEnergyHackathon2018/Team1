@@ -1,0 +1,28 @@
+{
+  "bindings": [
+    {
+      "authLevel": "anonymous",
+      "name": "req",
+      "type": "httpTrigger",
+      "direction": "in",
+      "methods": [
+        "get",
+        "post"
+      ]
+    },
+    {
+      "name": "$return",
+      "type": "http",
+      "direction": "out"
+    },
+    {
+      "type": "cosmosDB",
+      "name": "activityDocument",
+      "databaseName": "era",
+      "collectionName": "activities",
+      "createIfNotExists": false,
+      "connectionStringSetting": "era-app_DOCUMENTDB",
+      "direction": "out"
+    }
+  ]
+}

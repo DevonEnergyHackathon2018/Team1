@@ -12,7 +12,7 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "^6.1.0",
+    "@angular/animations": "^6.1.10",
     "@angular/cdk": "^6.4.7",
     "@angular/common": "^6.1.0",
     "@angular/compiler": "^6.1.0",
@@ -25,7 +25,11 @@
     "@angular/pwa": "^0.8.4",
     "@angular/router": "^6.1.0",
     "@angular/service-worker": "^6.1.0",
+    "@types/jquery": "^3.3.22",
     "core-js": "^2.5.4",
+    "jquery": "^3.3.1",
+    "ng2-toastr": "^4.1.2",
+    "ngx-toastr": "^9.1.1",
     "normalize.css": "^8.0.0",
     "zone.js": "~0.8.26"
   },
