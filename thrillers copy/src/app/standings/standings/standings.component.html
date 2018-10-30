@@ -1,0 +1,56 @@
+<div class="container">
+  
+  <h1>Standings</h1>
+  
+  <p class="countdown">2 days, 11 hours remaining</p>
+  
+  <nav class="tabs">
+    <div class="tab" (click)="options.display = 'bu'" [ngClass]="options.display === 'bu' ? 'active': ''">BU </div>
+    <div class="tab" (click)="options.display = 'crew'" [ngClass]="options.display === 'crew' ? 'active': ''">Crews</div>
+  </nav>
+  
+  <ol class="standings bu" *ngIf="options.display === 'bu'">
+    <li class="bu-standing" *ngFor="let bu of standingsByBU">
+      <h3>{{bu.name}}  ({{bu.points}})</h3>
+      <ol>
+        <li class="standing-line" *ngFor="let standing of bu.crews">
+          <div class="headline">
+            <div class="supervisor">{{standing.name}}</div>
+            <div class="points">{{standing.points}}</div>
+          <div class="arrow"><i class="fa fa-angle-{{standing.trend}} {{standing.trend}}"></i></div>
+          </div>
+        </li>
+      </ol>
+    </li>
+  </ol>
+  
+  <ol class="standings crew" *ngIf="options.display === 'crew'">
+    <li class="standing-line" [ngClass]="standing.expanded ? 'exanded' : 'collapsed'" *ngFor="let standing of standingsByCrew; index as index" (click)="standingClicked(standing)">
+      <div class="headline">
+        <div class="supervisor">
+            <a [routerLink]="['/recommendations',{standingName: standing.name}]">
+          {{standing.name}}</a>
+          <i class="fas fa-trophy fa-xs trophy-{{index+1}}" *ngIf="index <= 2"></i>
+        </div>
+        <div class="points">{{standing.points}}</div>
+        <div class="arrow"><i class="fa fa-angle-{{standing.trend}} {{standing.trend}}"></i></div>
+      </div>
+      <div class="details">
+        <div class="activities">
+          <ul>
+            <li class="header">
+              <div class="name">Activity</div>
+              <div class="count">Count</div>
+              <div class="points">Points</div>
+            </li>
+            <li *ngFor="let detail of standing.details">
+              <div class="name">{{detail.activity}}</div>
+              <div class="count">{{detail.count}}</div>
+              <div class="points">{{detail.points}}</div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </li>
+  </ol>
+</div>

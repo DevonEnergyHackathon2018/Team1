@@ -1,0 +1,28 @@
+div.container {
+    padding-left: .5em;
+    padding-right: .5em;
+ }
+ 
+ 
+*{font-family: 'Roboto'}
+
+p {
+    line-height: 1.5em;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+th {
+    background-color: #ff9100;
+    color: white;
+} 
+td {
+   text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+

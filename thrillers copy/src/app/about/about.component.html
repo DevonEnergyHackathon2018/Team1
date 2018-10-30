@@ -1,0 +1,50 @@
+<div class="container">
+    
+    <h2>Background</h2>
+    <p>EHS activities are marked by a number of key metrics which are categorized primarily as either "leading" or "lagging." 
+        Leading metrics are data points taken before any given event occurs and by nature are forward-facing.  Lagging metrics, 
+        on the other hand, are data points taken after any given event occurs.  
+    </p>
+    <p>
+        In this tool, we analyze leading metrics and EHS events to identify the correlation between EHS activities and their
+        ability to prevent negative EHS events. 
+    </p>
+    
+    <h2>
+        Methodology
+    </h2>
+    <p>
+        We evaluated two data sets: Exposure Reduction Activity and Event Summary.  After moving these datasets into Databricks, 
+        we regressed each variable to identify where correlations exist between pre-event safety activities and negative
+        events recorded.  Any correlation above(+/-).5 was considered significant.
+    </p>
+    <p>
+        Using the correlations, we assigned points to each of the pre-event activities based on their impact on safety.
+    </p>
+    
+    <div style="overflow-x:auto;">
+    <table border = "1" cellpadding = "5" cellspacing = "4">
+        <th>Activity</th>
+        <th>Points</th>
+    
+        <tr *ngFor="let activity of activityTypes">
+            <td>{{activity.type}}</td>
+            <td>{{activity.points}}</td>
+        </tr>
+    
+    </table>
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</div>

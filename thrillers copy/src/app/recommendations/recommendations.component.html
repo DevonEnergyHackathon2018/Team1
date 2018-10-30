@@ -1,0 +1,101 @@
+<h1>Recommendations</h1>
+
+<ul class="standings" *ngIf="standing">
+  <li class="standing-line">
+    <div class="headline">
+      <div class="supervisor">{{standing.name}}</div>
+      <div class="points">{{standing.points}}</div>
+      <div class="arrow"><i class="fa fa-angle-{{standing.trend}} {{standing.trend}}"></i></div>
+    </div>
+    <div class="details">
+      <div class="activities">
+        <ul>
+          <li class="header">
+            <div class="name">Activity</div>
+            <div class="points">Points This Week</div>
+            <div class="points">Points Last Week</div>
+          </li>
+          <li *ngFor="let detail of standing.details">
+            <div class="name">{{detail.activity}}</div>
+            <div class="count">{{detail.points}}</div>
+            <div class="points">{{detail.pointsLastWeek}}</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </li>
+</ul>
+
+<div *ngIf="standing">
+  <div *ngFor="let detail of standing.details">
+    <div *ngIf="detail.activity === 'Tailgate Meetings' && detail.points < detail.pointsLastWeek"
+      class="recommendations">
+      Your Tailgate Meetings score decreased from last week! You are currently {{detail.average - detail.points}} points behind the company average of {{detail.average}} points. Schedule and remember to enter your tailgate meetings into the Exposure Reduction app to earn more points!
+    </div>
+    <div *ngIf="detail.activity === 'Driver Evaluation' && detail.points < detail.pointsLastWeek" class="recommendations">
+      Your Driver Evaluation score descreased from last week! You are currently {{detail.average - detail.points}} points behind the company average of {{detail.average}} points. Schedule driver performance reports and remember to enter
+      these into the Exposure Reduction app to earn more points!
+    </div>
+    <div *ngIf="detail.activity === 'Field Evaluation' && detail.points < detail.pointsLastWeek" class="recommendations">
+      Your Field Evaluation score decreased from last week! You are currently {{detail.average - detail.points}} points behind the company average of {{detail.average}} points. Schedule leader/employee ride alongs and field evaluations.
+      Remember to enter these into the Exposure Reduction app to earn more points!
+    </div>
+    <div *ngIf="detail.activity === 'Contractor Engagement' && detail.points < detail.pointsLastWeek" class="recommendations">
+      Your Contractor Engagement score decreased from last week! You are currently {{detail.average - detail.points}} points behind the company average of {{detail.average}} points. Meet with your contractors and set Devon's
+      expectations
+      for working safely. Remember to enter these into the Exposure Reduction app to earn more points!
+    </div>
+    <div *ngIf="detail.activity === 'Environmental Training' && detail.points < detail.pointsLastWeek" class="recommendations">
+      Your Environmental Training score decreased from last week! You are currently {{detail.average - detail.points}} points behind the company average of {{detail.average}} points. Setup more discussions and training opportunities
+      with
+      your team. Remember to enter these activities into the Exposure Reduction app to earn more points!
+    </div>
+    <div *ngIf="detail.activity === 'Hazard Recognition' && detail.points < detail.pointsLastWeek" class="recommendations">
+      Your Hazard Recognition score decreased from last week! You are currently {{detail.average - detail.points}} points behind the company average of {{detail.average}} points. Remember to enter any home related EHS activities into
+      the
+      Exposure Reduction app to earn more points!
+    </div>
+    <div *ngIf="detail.activity === 'Onsite Coaching/Feedback' && detail.points < detail.pointsLastWeek" class="recommendations">
+      Your Onsite Coaching/Feedback score decreased from last week! You are currently {{detail.average - detail.points}} points behind the company average of {{detail.average}} points. Remember to enter your JHA reviews into the Exposure
+      Reduction app to earn more points!
+    </div>
+    <div *ngIf="detail.activity === 'Safety Commitment' && detail.points < detail.pointsLastWeek" class="recommendations">
+      Your Safety Commitment score decreased from last week! You are currently {{detail.average - detail.points}} points behind the company average of {{detail.average}} points. Remember to write entries into the Exposure Reduction app
+      whenever an employee is recognized for their commitment to safety!
+    </div>
+    <div *ngIf="detail.activity === 'SAFE Observation' && detail.points < detail.pointsLastWeek" class="recommendations">
+      Your SAFE Observation score decreased from last week! You are currently {{detail.average - detail.points}} points behind the company average of {{detail.average}} points. Remember to enter your SAFE Observations into the Exposure
+      Reduction app to earn more points!
+    </div>
+    <div *ngIf="detail.activity === 'Stop Work' && detail.points < detail.pointsLastWeek" class="recommendations">
+      Your Stop Exposures/Work score decreased from last week! You are currently {{detail.average - detail.points}} points behind the company average of {{detail.average}} points. Remember to enter these activities to the Exposure
+      Reduction
+      app to earn more points!
+    </div>
+  </div>
+
+
+</div>
+
+
+<div *ngIf="streak">
+  <h1>Streaks</h1>
+  <div style="overflow-x:auto;">
+    <table border = "1" cellpadding = "5" cellspacing = "4">
+      <th>Activity</th>
+      <th>Streak</th>
+
+      <tr *ngFor="let details of streak.details">
+          <td>{{details.activity}}</td>
+          <td>
+              <div class=days>
+                  {{details.days}}
+                  <i *ngIf="details.days > 30 && details.days <= 60" class="fas fa-trophy fa-xs trophy-3"></i>
+                  <i *ngIf="details.days > 60 && details.days <= 90" class="fas fa-trophy fa-xs trophy-2"></i>
+                  <i *ngIf="details.days > 90" class="fas fa-trophy fa-xs trophy-1"></i>
+              </div>
+          </td>
+      </tr>
+    </table>
+  </div>
+</div>
