@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from 'src/app/services/data.service';
 import { NetworkAvailabilityService } from 'src/app/services/network-availability.service';
 import { interval } from 'rxjs';
+import { ToastrService } from 'ngx-toastr'
 
 @Component({
   selector: 'app-add',
@@ -17,7 +18,9 @@ export class AddComponent implements OnInit {
 
   public activityType: any;
 
-  constructor(private dataService: DataService, private networkAvailability: NetworkAvailabilityService) {
+  constructor(private dataService: DataService, 
+    private networkAvailability: NetworkAvailabilityService,
+    private toastr: ToastrService) {
     dataService.getData('activityTypes')
       .subscribe(data => {
         this.activityTypes = data;
@@ -64,6 +67,8 @@ export class AddComponent implements OnInit {
       existingArray.push(entity);
       localStorage.setItem(this.localStorageKey, JSON.stringify(existingArray));
 
+      this.toastr.success("ERA entry queued.");
+
       // if (existing === undefined) {
         // localStorage.setItem(this.localStorageKey, JSON.stringify([entity]));
       // } else {
@@ -71,12 +76,14 @@ export class AddComponent implements OnInit {
       // }
     } else {
       this.postNewItem(entity);
+      this.toastr.success("ERA entry added!");
     }
   }
 
   public postQueuedEntities(): void {
     const entityArray = JSON.parse(localStorage.getItem(this.localStorageKey)) || [];
     entityArray.forEach(e => this.postNewItem(e));
+    this.toastr.success("Queued entries added to database.")
     localStorage.clear();
   }
 

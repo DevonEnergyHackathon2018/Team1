@@ -28,7 +28,7 @@ export class RecommendationsComponent implements OnInit {
       .getData('standings')
       .subscribe(data => {
         this.standings = data;
-        this.standing = data.find(x => x.name === this.standingName);
+        this.standing = data.find(x => x.name === "Jimmy Hendrix");
 
         this.standing.details.forEach(detail => {
           let sum = 0;
@@ -47,7 +47,7 @@ export class RecommendationsComponent implements OnInit {
       .getData('streaks')
       .subscribe(data => {
         this.streaks = data;
-        this.streak = data.find(x => x.name === this.standingName);
+        this.streak = data.find(x => x.name === "Jimmy Hendrix");
       });
 
 

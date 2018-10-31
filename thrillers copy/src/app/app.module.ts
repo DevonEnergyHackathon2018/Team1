@@ -13,6 +13,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { StandingsComponent } from './standings/standings/standings.component';
 import { RecommendationsComponent } from './recommendations/recommendations.component'
 import { AddComponent } from './add/add/add.component';
+import { StandingService } from './services/standings.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+
+import { ToastrModule } from 'ngx-toastr';
+import { Browser } from 'protractor';
 
 @NgModule({
   declarations: [
@@ -28,9 +34,12 @@ import { AddComponent } from './add/add/add.component';
     AppRoutingModule,
     MatToolbarModule,
     HttpClientModule,
+    BrowserAnimationsModule,
+    NoopAnimationsModule,
+    ToastrModule.forRoot(),
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: true }),
   ],
-  providers: [],
+  providers: [StandingService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
